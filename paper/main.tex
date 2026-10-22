@@ -1,0 +1,59 @@
+\documentclass[twocolumn,a4paper,dvipdfmx]{ieicejsp}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{latexsym}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
+\usepackage{upgreek}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, fit}
+
+\captionsetup{font=small}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{14pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{14pt plus 2pt minus 2pt}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+
+\title{
+    {\bf 視覚言語モデルからの知識蒸留による大喜利お題画像の大規模アノテーション}
+    {\normalsize \\ Large-Scale Annotation of Ogiri Prompt Images via Knowledge Distillation from a Vision-Language Model}
+}
+\author{
+    山富 龍 \\ Ryo Yamatomi
+}
+\affliate{%
+    湘南工科大学 大学院 \\
+    Graduate University of Shonan Institute of Technology\\
+}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
+
+\input{sections/00_abstract}
+\input{sections/01_introduction}
+\input{sections/02_data}
+\input{sections/03_related_work}
+\input{sections/04_evaluation}
+\input{sections/05_method_selection}
+\input{sections/06_label_definition}
+\input{sections/07_teacher}
+\input{sections/08_student}
+\input{sections/09_final}
+\input{sections/10_full_data}
+\input{sections/11_discussion}
+\input{sections/12_conclusion}
+
+\vspace{-1mm}
+\input{sections/99_references}
+
+\end{document}

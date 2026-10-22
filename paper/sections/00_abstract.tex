@@ -1,0 +1,24 @@
+\begin{abstract}
+大喜利投稿サイト「ボケて」では，投稿者が掲示した画像（お題画像）に対して利用者が面白い一言（ボケ）を投稿する．
+お題画像には，通常の写真のほかに，空欄に入る語を答える穴埋め，ひらがなから始まる文を作るカルタ，画像中の問いに答えるお題文などの形式があり，形式ごとにボケの生成に必要な処理が異なる．
+本稿では，ボケてから収集した約682万件のお題画像に対し，大喜利の形式，画像中の記号や文字の有無，画像の媒体を表すラベルを，有料の API を用いずに単一の GPU で付与する方法を確立するまでの経緯と分析を報告する．
+まず，ゼロショット分類，メタデータを用いた弱教師あり学習，視覚言語モデル (Vision-Language Model，VLM) による直接の分類，VLM のラベルを高速な画像分類器に移す知識蒸留を比較し，VLM である Qwen3-VL-8B を教師とし，SigLIP 2 の画像埋め込みに基づく分類器を生徒とする蒸留が，教師と同等以上の精度を約1桁速い速度で得ることを示した．
+次に，精度の上限がラベルの定義の曖昧さによって決まっていることを示し，ボケの生成に必要な処理から逆算してラベルの定義を4回改訂した．
+さらに，VLM への質問を軸ごとに分割する方法，誤りやすいクラスに限って別の短い質問で確かめる方法，少ない区分の画像を生徒の予測で選んで追加する方法，2種類の生徒の確率を平均する方法を導入した．
+最終の構成は，目視のラベルに対して，評価用データで3軸のマクロ F1 の平均 0.919，実データで全項目が一致する画像の割合の推定値 0.838 を達成し，全データの予測を約10.2時間で完了した．
+\par
+\noindent
+{\bf キーワード} 大喜利，データアノテーション，視覚言語モデル，知識蒸留，ラベル設計
+\end{abstract}
+
+\section*{Abstract}
+On the Japanese comedy site Bokete, users post a witty line (boke) in response to a prompt image (odai).
+Prompt images come in several formats, such as fill-in-the-blank images, karuta cards that require a line starting with a given hiragana character, and images containing a written question, and each format requires a different generation process.
+This paper reports how we established a method to annotate about 6.82 million prompt images with their Ogiri format, the presence of symbols and text, and the visual medium, on a single GPU without paid APIs.
+We first compare zero-shot classification, weak supervision from metadata, direct classification by a vision-language model (VLM), and knowledge distillation, and show that distilling labels of Qwen3-VL-8B into classifiers on SigLIP 2 embeddings matches the teacher's accuracy at roughly ten times its speed.
+We then show that the accuracy is bounded by ambiguity in the label definitions, and revise the definitions four times by deriving them from the processes needed to generate a boke.
+We further introduce axis-wise questioning of the VLM, a separate verification question for error-prone classes, mining of rare classes with student predictions, and averaging the probabilities of two students.
+The final pipeline achieves an average macro F1 of 0.919 over three axes on the evaluation set and an estimated exact-match rate of 0.838 on real data, and predicts all images in about 10.2 hours.
+\par
+\noindent
+{\bf Key words} Ogiri, Data Annotation, Vision-Language Model, Knowledge Distillation, Label Design

@@ -1,0 +1,26 @@
+# お題画像の種別判定の比較実験用（Python 3.10，CUDA 対応 GPU が必要）
+# torch / vllm / transformers は BoketeDBv3.1 の注釈で動作実績のある組み合わせに合わせている
+torch==2.11.0
+torchvision==0.26.0
+transformers==5.12.1
+accelerate==1.14.0
+vllm==0.23.0
+qwen-vl-utils==0.0.14
+ninja
+timm
+opencv-python
+yomitoku==0.15.0
+pillow==12.2.0
+numpy==2.2.6
+tqdm==4.68.3
+polars
+pyarrow
+scikit-learn
+matplotlib
+pandas
+sentencepiece
+protobuf
+pytest
+ipykernel
+jupyter
+nbconvert
