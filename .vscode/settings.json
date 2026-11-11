@@ -1,4 +1,8 @@
 {
     "python.venvPath": "${workspaceFolder}",
-    "markdown-pdf.executablePath": "/usr/bin/chromium-browser"
+    "markdown-pdf.executablePath": "/usr/bin/chromium-browser",
+    "env": {
+        "DISABLE_ERROR_REPORTING": "1",
+        "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "1"
+    }
 }

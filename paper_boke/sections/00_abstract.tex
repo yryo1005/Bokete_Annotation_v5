@@ -1,0 +1,24 @@
+\begin{abstract}
+大喜利投稿サイト「ボケて」に蓄積された約9,250万件の回答文（ボケ）を，大喜利の生成や判定の研究に用いるため，ボケの構造を表すラベルを設計し，自動で付与する方法を検討した．
+実例の読解から，お題の形式が課す制約，ボケが誰の視点の言葉であるかを表す発話の型，面白さの理解に画像の外の知識が必要かの3つの観点を定め，定義書を3回改訂した．
+検証データ620件の目視ラベルを作成し，同一の判断者が時間を置いて付け直したときの一致度を測ったところ，発話の型の6区分でマクロ F1 0.80，画像外の知識で F1 0.85 であり，これが自動判定の実質的な上限であることを示した．
+カルタの制約の順守は書き出しの規則で，穴埋めとお題文の制約の順守は同じお題の他のボケとの類似度で判定でき，後者は付け替えた組との判別で AUC 0.81 を得た．
+視覚言語モデル (Vision-Language Model，VLM) の教師とそのラベルで学習した文の埋め込みの分類器を比較した後，お題画像とボケを入力とする小さな VLM を教師ラベルで学習し，さらに少量の目視ラベルで微調整する二段階の学習を提案した．
+この方法により，最終評価用データで発話の型の6区分のマクロ F1 を0.53から0.71〜0.74へ，画像外の知識の F1 を0.32から0.68〜0.70へ改善した．
+さらに，同じお題のボケで共通する画像とお題の部分の計算をキャッシュとして共有することで，予測をほぼ変えずに推論を約4倍に高速化し，全件の処理時間の見積もりを約32日から約8日に短縮した．
+\par
+\noindent
+{\bf キーワード} 大喜利，ユーモア，データアノテーション，視覚言語モデル，ラベル設計
+\end{abstract}
+
+\section*{Abstract}
+To use about 92.5 million Ogiri responses (boke) collected from the Japanese comedy site Bokete for research on humor generation and evaluation, we designed labels that describe the structure of a boke and studied how to assign them automatically.
+From close reading of real examples, we defined three aspects: compliance with the constraint imposed by the prompt format, the voice of the boke (whose words they are), and whether understanding the joke requires knowledge outside the image, and revised the guideline three times.
+We built a validation set of 620 manually labeled boke and measured the agreement when the same annotator relabeled it later; the agreement was a macro F1 of 0.80 for the six voice classes and an F1 of 0.85 for outside knowledge, which we regard as a practical upper bound for automatic labeling.
+Compliance with karuta prompts can be checked with a rule on the first character, and compliance with fill-in-the-blank and question prompts can be scored by similarity to other boke for the same prompt, achieving an AUC of 0.81 against swapped pairs.
+After comparing vision-language model (VLM) teachers and text-embedding students distilled from them, we propose a two-stage training of small VLMs that take both the prompt image and the boke: training on teacher labels followed by fine-tuning on a small number of manual labels.
+On the test set, this improves the macro F1 of the six voice classes from 0.53 to 0.71--0.74 and the F1 of outside knowledge from 0.32 to 0.68--0.70.
+Finally, by sharing the cached computation of the image and prompt among the boke of the same prompt, we speed up inference about four times with nearly identical predictions, reducing the estimated time for all boke from about 32 days to about 8 days.
+\par
+\noindent
+{\bf Key words} Ogiri, Humor, Data Annotation, Vision-Language Model, Label Design

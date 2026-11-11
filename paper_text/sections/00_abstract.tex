@@ -1,0 +1,26 @@
+\begin{abstract}
+大喜利投稿サイト「ボケて」のお題画像の約6割には読める文字があり，その文字が回答者への題であるか，画像の素材の一部であるかによって，ボケの生成に必要な処理が変わる．
+本稿では，約682万件のお題画像へのラベルの付与において，画像中の文字をどのように定義し，その定義がラベルの再現性，教師となる視覚言語モデル (Vision-Language Model，VLM) と生徒となる分類器の精度，全データのラベルの分布にどのような影響を与えたかを報告する．
+従来の定義では，お題文を「投稿者が回答者に向けて書き加えた文」とし，元の素材の字幕や看板を除いていた．
+この定義の下では，誤りの多くがテロップや帯の文字の出所の判断に集中し，VLM は投稿者が加えた文と元の字幕を区別できなかった．
+そこで，文字を写っている場所による4つの層と，文の形による5つの形に分け，お題文の有無を属性から規則で導く定義を提案した．
+1,620枚の目視ラベルで評価した結果，提案の属性は付け直しで記号の94\%が完全に一致し，選んだ規則で導いたお題文の有無は従来の定義と全データの推定で98.5\%（Cohen の $ \kappa $ 0.90）一致した．
+また，規則を変えるだけで，お題文と判定される画像の割合が7.4\%から16.7\%まで変わることを示した．
+一方，Qwen3-VL-32B は層を区別できず，教師としての F1 は0.43にとどまり，1,620枚で学習した生徒も既存のパッケージの F1 0.83 に届かなかった．
+\par
+\noindent
+{\bf キーワード} 大喜利，データアノテーション，ラベル設計，視覚言語モデル，画像中の文字
+\end{abstract}
+
+\section*{Abstract}
+About 60\% of the prompt images on the Japanese Ogiri site Bokete contain readable text, and whether the text is a prompt addressed to the answerers or part of the source material changes the processing needed to generate a witty response.
+This paper reports how we defined text in prompt images when annotating about 6.82 million images, and how the definition affected label reproducibility, the accuracy of a vision-language model (VLM) teacher and a student classifier, and the label distribution of the whole dataset.
+The previous definition treated a prompt sentence as text added by the poster for the answerers and excluded captions and signs in the source material.
+Under this definition, most errors concentrated on judging the origin of captions and bands, and the VLM could not distinguish text added by the poster from original subtitles.
+We therefore propose to split text into four layers by where it is placed and five forms by its sentence form, and to derive the presence of a prompt sentence from these attributes by a rule.
+On 1,620 manually labeled images, 94\% of the attribute codes were reproduced exactly on relabeling, and the presence of a prompt sentence derived by the selected rule agreed with the previous definition on 98.5\% of the population (Cohen's $ \kappa $ 0.90).
+We also show that changing the rule alone moves the share of images with a prompt sentence from 7.4\% to 16.7\%.
+However, Qwen3-VL-32B could not distinguish the layers and reached an F1 of only 0.43 as a teacher, and students trained on the 1,620 images did not reach the F1 of 0.83 of the existing package.
+\par
+\noindent
+{\bf Key words} Ogiri, Data Annotation, Label Design, Vision-Language Model, Text in Images

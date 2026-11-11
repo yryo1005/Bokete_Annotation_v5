@@ -22,3 +22,6 @@ tokens.json
 
 # 全データのアノテーションの独立したリポジトリ（別に GitHub で管理する）
 Bokete_Annotation_programs_v5.0/
+
+# LINE の公式アカウントによる判定の Bot の独立したリポジトリ（別に GitHub で管理する）
+Bokete_LINE_Annotator/
